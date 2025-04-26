@@ -1,21 +1,81 @@
 
 import { motion } from "framer-motion";
-import { slideUp, staggerContainer, techStackAnimation } from "../utils/animations";
+import { slideUp, staggerContainer } from "../utils/animations";
+import { 
+  Html, Tailwind, Javascript, React as ReactIcon, Framer,
+  Flask, NodeJs, Database, Git, Github, Code, FileCode
+} from "lucide-react";
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "./ui/hover-card";
 
 const AboutSection = () => {
-  const techStack = [
-    { name: "HTML", icon: "html.svg", color: "bg-orange-100 text-sunset-600" },
-    { name: "Tailwind CSS", icon: "tailwind.svg", color: "bg-orange-50 text-sunset-500" },
-    { name: "JavaScript", icon: "javascript.svg", color: "bg-sunset-50 text-sunset-600" },
-    { name: "React.js", icon: "react.svg", color: "bg-orange-50 text-sunset-500" },
-    { name: "Framer Motion", icon: "framer.svg", color: "bg-sunset-100 text-sunset-600" },
-    { name: "Flask", icon: "flask.svg", color: "bg-orange-100 text-sunset-600" },
-    { name: "Node.js", icon: "node.svg", color: "bg-sunset-50 text-sunset-500" },
-    { name: "MongoDB", icon: "mongodb.svg", color: "bg-orange-100 text-sunset-600" },
-  ];
+  const techStack = {
+    frontend: [
+      { name: "HTML", icon: Html, experience: "4 years", color: "text-orange-600" },
+      { name: "Tailwind CSS", icon: Tailwind, experience: "3 years", color: "text-sky-500" },
+      { name: "JavaScript", icon: Javascript, experience: "4 years", color: "text-yellow-500" },
+      { name: "React.js", icon: ReactIcon, experience: "3 years", color: "text-blue-500" },
+      { name: "Framer Motion", icon: Framer, experience: "2 years", color: "text-purple-500" },
+    ],
+    backend: [
+      { name: "Flask", icon: Flask, experience: "2 years", color: "text-gray-700" },
+      { name: "Node.js", icon: NodeJs, experience: "3 years", color: "text-green-600" },
+      { name: "MongoDB", icon: Database, experience: "2 years", color: "text-green-500" },
+    ],
+    tools: [
+      { name: "Git", icon: Git, experience: "4 years", color: "text-orange-600" },
+      { name: "GitHub", icon: Github, experience: "4 years", color: "text-gray-900" },
+      { name: "VS Code", icon: Code, experience: "4 years", color: "text-blue-600" },
+      { name: "Postman", icon: FileCode, experience: "3 years", color: "text-orange-500" },
+    ],
+  };
+
+  const renderTechGroup = (title: string, items: typeof techStack.frontend) => (
+    <motion.div 
+      variants={slideUp}
+      className="space-y-4"
+    >
+      <h3 className="text-2xl font-bold text-foreground mb-6">{title}</h3>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        {items.map((tech) => (
+          <HoverCard key={tech.name}>
+            <HoverCardTrigger>
+              <motion.div
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 15px -3px rgba(249, 115, 22, 0.1), 0 4px 6px -2px rgba(249, 115, 22, 0.05)"
+                }}
+                className="tech-card bg-white/80 backdrop-blur-sm border border-sunset-100 rounded-2xl p-6 cursor-pointer"
+              >
+                <div className="flex flex-col items-center justify-center space-y-3">
+                  <motion.div
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ 
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className={`w-12 h-12 flex items-center justify-center ${tech.color}`}
+                  >
+                    <tech.icon size={32} />
+                  </motion.div>
+                  <span className="text-sm font-medium text-gray-700">{tech.name}</span>
+                </div>
+              </motion.div>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-64 p-4">
+              <div className="space-y-2">
+                <h4 className="text-sm font-semibold">{tech.name}</h4>
+                <p className="text-sm text-muted-foreground">Experience: {tech.experience}</p>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
+        ))}
+      </div>
+    </motion.div>
+  );
 
   return (
-    <section id="about" className="py-20 section-padding">
+    <section id="about" className="py-20 section-padding bg-gradient-to-b from-white to-orange-50/30">
       <div className="container mx-auto">
         <motion.div
           initial="hidden"
@@ -54,40 +114,14 @@ const AboutSection = () => {
           {/* Tech Stack Section */}
           <motion.div
             variants={slideUp}
-            className="flex flex-col justify-center"
+            className="lg:col-span-2"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">Tech Stack</h2>
-            <motion.div
-              variants={staggerContainer}
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
-            >
-              {techStack.map((tech, index) => (
-                <motion.div
-                  key={tech.name}
-                  variants={techStackAnimation}
-                  whileHover={{ 
-                    scale: 1.05, 
-                    boxShadow: "0 10px 15px -3px rgba(249, 115, 22, 0.1), 0 4px 6px -2px rgba(249, 115, 22, 0.05)" 
-                  }}
-                  className={`tech-icon rounded-xl p-4 flex flex-col items-center justify-center ${tech.color} transition-all duration-300`}
-                >
-                  <div className="w-12 h-12 flex items-center justify-center mb-2">
-                    <svg 
-                      width="24" 
-                      height="24" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="animate-float"
-                    >
-                      <rect width="24" height="24" rx="12" fill="currentColor" fillOpacity="0.2" />
-                      <path d="M12 6v12M6 12h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-medium text-center">{tech.name}</span>
-                </motion.div>
-              ))}
-            </motion.div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center">Tech Stack</h2>
+            <div className="space-y-12">
+              {renderTechGroup("Frontend", techStack.frontend)}
+              {renderTechGroup("Backend", techStack.backend)}
+              {renderTechGroup("Tools", techStack.tools)}
+            </div>
           </motion.div>
         </motion.div>
       </div>
