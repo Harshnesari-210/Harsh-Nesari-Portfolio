@@ -13,22 +13,24 @@ const ProjectsSection = () => {
       background: "bg-gradient-to-br from-sunset-50 to-sunset-100",
     },
     {
-      title: "TaskForge",
-      description: "Collaborative task management platform with custom workflows and productivity analytics.",
-      tags: ["React", "Firebase", "Tailwind CSS", "Redux"],
-      liveLink: "https://example.com",
-      githubLink: "https://github.com",
-      background: "bg-gradient-to-br from-orange-50 to-sunset-100",
+      title: "Reframe AI",
+      description: "An AI-based Chrome extension that enhances prompts for better chatbot interactions, featuring a Multi-Step Prompt Engine for structured, logical task breakdowns.",
+      tags: ["React", "Flask", "T5 Model", "Docker", "Express"],
+      liveLink: "https://example.com",   // <-- Update this later with real demo link if you have
+      githubLink: "https://github.com",   // <-- Update this later with real GitHub repo link
+      background: "bg-gradient-to-br from-sunset-50 to-sunset-100",
     },
     {
-      title: "EcoTrack",
-      description: "Environmental monitoring dashboard with IoT integration and predictive analytics.",
-      tags: ["React", "Python", "Flask", "PostgreSQL", "TensorFlow"],
-      liveLink: "https://example.com",
-      githubLink: "https://github.com",
-      background: "bg-gradient-to-br from-sunset-50 to-orange-100",
+      title: "RentLink",
+      description: "A local home rental platform connecting homeowners and renters with features like bookings, reviews, and real-time chat.",
+      tags: ["MERN Stack", "Framer Motion", "Redux", "MongoDB"],
+      liveLink: "https://example.com",    // <-- Update this later with real demo link if you have
+      githubLink: "https://github.com",    // <-- Update this later with real GitHub repo link
+      background: "bg-gradient-to-br from-sunset-50 to-sunset-100",
     }
   ];
+  
+  
 
   return (
     <section id="projects" className="py-20 section-padding gradient-bg">

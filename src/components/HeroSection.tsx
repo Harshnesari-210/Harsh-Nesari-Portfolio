@@ -58,7 +58,7 @@ const HeroSection = () => {
           className="flex flex-wrap justify-center gap-4 md:gap-6"
           variants={fadeIn}
         >
-          {["Focused Learner", "DSA & Backend Developer", "AI & Cloud Explorer"].map((tag, index) => (
+          {["WEB AI developer","UI/UX designer" ,"Backend Developer"].map((tag, index) => (
             <motion.div
               key={tag}
               className="py-2 px-6 border border-sunset-200 rounded-full text-sm bg-white/50 backdrop-blur-sm hover:border-sunset-400 transition-colors hover:animate-glow"

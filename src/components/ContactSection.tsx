@@ -173,7 +173,7 @@ const ContactSection = () => {
 
               <div className="space-y-4">
                 <motion.a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/harsh-nesari/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-muted-foreground hover:text-sunset-500 transition-colors"
@@ -186,7 +186,7 @@ const ContactSection = () => {
                 </motion.a>
                 
                 <motion.a
-                  href="https://github.com"
+                  href="https://github.com/Harshnesari-210"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-muted-foreground hover:text-sunset-500 transition-colors"
@@ -199,7 +199,7 @@ const ContactSection = () => {
                 </motion.a>
                 
                 <motion.a
-                  href="mailto:example@example.com"
+                  href="mailto:harshnesari9@gmail.com"
                   className="flex items-center text-muted-foreground hover:text-sunset-500 transition-colors"
                   whileHover={{ x: 5 }}
                 >
