@@ -2,27 +2,34 @@
 import { motion } from "framer-motion";
 import { slideUp, staggerContainer } from "../utils/animations";
 import { 
-  Html, Tailwind, Javascript, React as ReactIcon, Framer,
-  Flask, NodeJs, Database, Git, Github, Code, FileCode
+  Code, 
+  FileCode,
+  Database,
+  Github,
+  Cpu,
+  PenTool,
+  LayoutGrid,
+  ServerCog,
+  Terminal
 } from "lucide-react";
 import { HoverCard, HoverCardTrigger, HoverCardContent } from "./ui/hover-card";
 
 const AboutSection = () => {
   const techStack = {
     frontend: [
-      { name: "HTML", icon: Html, experience: "4 years", color: "text-orange-600" },
-      { name: "Tailwind CSS", icon: Tailwind, experience: "3 years", color: "text-sky-500" },
-      { name: "JavaScript", icon: Javascript, experience: "4 years", color: "text-yellow-500" },
-      { name: "React.js", icon: ReactIcon, experience: "3 years", color: "text-blue-500" },
-      { name: "Framer Motion", icon: Framer, experience: "2 years", color: "text-purple-500" },
+      { name: "HTML", icon: Code, experience: "4 years", color: "text-orange-600" },
+      { name: "Tailwind CSS", icon: PenTool, experience: "3 years", color: "text-sky-500" },
+      { name: "JavaScript", icon: FileCode, experience: "4 years", color: "text-yellow-500" },
+      { name: "React.js", icon: Cpu, experience: "3 years", color: "text-blue-500" },
+      { name: "Framer Motion", icon: LayoutGrid, experience: "2 years", color: "text-purple-500" },
     ],
     backend: [
-      { name: "Flask", icon: Flask, experience: "2 years", color: "text-gray-700" },
-      { name: "Node.js", icon: NodeJs, experience: "3 years", color: "text-green-600" },
+      { name: "Flask", icon: ServerCog, experience: "2 years", color: "text-gray-700" },
+      { name: "Node.js", icon: Terminal, experience: "3 years", color: "text-green-600" },
       { name: "MongoDB", icon: Database, experience: "2 years", color: "text-green-500" },
     ],
     tools: [
-      { name: "Git", icon: Git, experience: "4 years", color: "text-orange-600" },
+      { name: "Git", icon: Code, experience: "4 years", color: "text-orange-600" },
       { name: "GitHub", icon: Github, experience: "4 years", color: "text-gray-900" },
       { name: "VS Code", icon: Code, experience: "4 years", color: "text-blue-600" },
       { name: "Postman", icon: FileCode, experience: "3 years", color: "text-orange-500" },
