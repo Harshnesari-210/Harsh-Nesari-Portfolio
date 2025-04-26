@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -95,27 +94,17 @@
   
   /* Custom gradient backgrounds */
   .gradient-bg {
-    background: linear-gradient(135deg, rgba(155, 135, 245, 0.1) 0%, rgba(126, 105, 171, 0.1) 100%);
+    @apply bg-gradient-to-br from-sunset-50/50 to-white;
   }
   
   .shimmer {
-    background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    background-size: 200% 100%;
+    @apply bg-gradient-to-r from-transparent via-sunset-100/20 to-transparent bg-[length:200%_100%];
     animation: shimmer 1.5s infinite;
   }
   
   @keyframes shimmer {
-    0% {
-      background-position: -100% 0;
-    }
-    100% {
-      background-position: 100% 0;
-    }
+    0% { background-position: -100% 0; }
+    100% { background-position: 100% 0; }
   }
   
   .section-padding {
@@ -123,6 +112,6 @@
   }
   
   .tech-icon {
-    @apply transition-all duration-300 hover:scale-110 hover:shadow-md;
+    @apply transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-sunset-200/50;
   }
 }

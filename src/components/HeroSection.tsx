@@ -4,7 +4,7 @@ import { fadeIn, textReveal, staggerContainer } from "../utils/animations";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center gradient-bg section-padding relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
       <motion.div 
         className="absolute inset-0 -z-10"
@@ -12,8 +12,8 @@ const HeroSection = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
       >
-        <div className="absolute top-32 left-1/4 w-64 h-64 rounded-full bg-highlight/5 blur-3xl"></div>
-        <div className="absolute bottom-32 right-1/4 w-64 h-64 rounded-full bg-highlightDark/5 blur-3xl"></div>
+        <div className="absolute top-32 left-1/4 w-64 h-64 rounded-full bg-sunset-200/20 blur-3xl"></div>
+        <div className="absolute bottom-32 right-1/4 w-64 h-64 rounded-full bg-sunset-300/20 blur-3xl"></div>
       </motion.div>
 
       {/* Content Container */}
@@ -24,14 +24,14 @@ const HeroSection = () => {
         animate="visible"
       >
         <motion.h4 
-          className="text-lg md:text-xl font-medium mb-4 text-muted-foreground"
+          className="text-lg md:text-xl font-medium mb-4 text-sunset-600"
           variants={textReveal}
         >
           Hello, I am
         </motion.h4>
         
         <motion.h1 
-          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-highlight to-highlightDark bg-clip-text text-transparent"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-sunset-400 to-sunset-600 bg-clip-text text-transparent"
           variants={textReveal}
         >
           Harsh Nesari
@@ -41,13 +41,13 @@ const HeroSection = () => {
           className="mb-8"
           variants={fadeIn}
         >
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800">
             Turning ideas into clean code and clean UI – one pixel at a time.
           </h2>
         </motion.div>
         
         <motion.p 
-          className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10"
+          className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-10"
           variants={textReveal}
         >
           A passionate developer who loves creating elegant solutions to complex problems.
@@ -58,24 +58,18 @@ const HeroSection = () => {
           className="flex flex-wrap justify-center gap-4 md:gap-6"
           variants={fadeIn}
         >
-          <motion.div 
-            className="py-1 px-4 border border-border rounded-full text-sm bg-background/50 backdrop-blur-sm"
-            whileHover={{ scale: 1.05 }}
-          >
-            Focused Learner
-          </motion.div>
-          <motion.div 
-            className="py-1 px-4 border border-border rounded-full text-sm bg-background/50 backdrop-blur-sm"
-            whileHover={{ scale: 1.05 }}
-          >
-            DSA & Backend Developer
-          </motion.div>
-          <motion.div 
-            className="py-1 px-4 border border-border rounded-full text-sm bg-background/50 backdrop-blur-sm"
-            whileHover={{ scale: 1.05 }}
-          >
-            AI & Cloud Explorer
-          </motion.div>
+          {["Focused Learner", "DSA & Backend Developer", "AI & Cloud Explorer"].map((tag, index) => (
+            <motion.div
+              key={tag}
+              className="py-2 px-6 border border-sunset-200 rounded-full text-sm bg-white/50 backdrop-blur-sm hover:border-sunset-400 transition-colors hover:animate-glow"
+              whileHover={{ scale: 1.05, y: -2 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              {tag}
+            </motion.div>
+          ))}
         </motion.div>
         
         <motion.div
@@ -86,7 +80,7 @@ const HeroSection = () => {
         >
           <a 
             href="#about"
-            className="inline-block"
+            className="inline-block text-sunset-500 hover:text-sunset-600"
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}
