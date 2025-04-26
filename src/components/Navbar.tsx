@@ -72,7 +72,7 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span className="text-highlight">Harsh</span> Nesari
+          <span className="text-sunset-500">Harsh</span> Nesari
         </motion.a>
 
         {/* Desktop Menu */}
@@ -81,7 +81,7 @@ const Navbar = () => {
             <motion.a
               key={item.name}
               href={item.href}
-              className="font-medium text-foreground hover:text-highlight transition-colors"
+              className="font-medium text-foreground hover:text-sunset-500 transition-colors"
               whileHover={{ y: -2 }}
               custom={i}
               variants={menuAnimation}
@@ -126,7 +126,7 @@ const Navbar = () => {
             <motion.a
               key={item.name}
               href={item.href}
-              className="text-lg font-medium text-foreground hover:text-highlight transition-colors"
+              className="text-lg font-medium text-foreground hover:text-sunset-500 transition-colors"
               onClick={() => setIsOpen(false)}
               custom={i}
               variants={menuAnimation}

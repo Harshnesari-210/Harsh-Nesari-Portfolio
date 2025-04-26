@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="py-8 border-t border-border">
+    <footer className="py-8 border-t border-sunset-100">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <motion.div
@@ -29,7 +29,7 @@ const Footer = () => {
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-highlight transition-colors"
+                className="text-muted-foreground hover:text-sunset-500 transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -41,7 +41,7 @@ const Footer = () => {
                 href="https://github.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-highlight transition-colors"
+                className="text-muted-foreground hover:text-sunset-500 transition-colors"
                 aria-label="GitHub"
               >
                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -51,7 +51,7 @@ const Footer = () => {
               
               <a 
                 href="mailto:example@example.com" 
-                className="text-muted-foreground hover:text-highlight transition-colors"
+                className="text-muted-foreground hover:text-sunset-500 transition-colors"
                 aria-label="Email"
               >
                 <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

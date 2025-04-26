@@ -10,7 +10,7 @@ const ProjectsSection = () => {
       tags: ["React", "Node.js", "Express", "MongoDB"],
       liveLink: "https://example.com",
       githubLink: "https://github.com",
-      background: "bg-gradient-to-br from-blue-50 to-indigo-100",
+      background: "bg-gradient-to-br from-sunset-50 to-sunset-100",
     },
     {
       title: "TaskForge",
@@ -18,7 +18,7 @@ const ProjectsSection = () => {
       tags: ["React", "Firebase", "Tailwind CSS", "Redux"],
       liveLink: "https://example.com",
       githubLink: "https://github.com",
-      background: "bg-gradient-to-br from-rose-50 to-orange-100",
+      background: "bg-gradient-to-br from-orange-50 to-sunset-100",
     },
     {
       title: "EcoTrack",
@@ -26,7 +26,7 @@ const ProjectsSection = () => {
       tags: ["React", "Python", "Flask", "PostgreSQL", "TensorFlow"],
       liveLink: "https://example.com",
       githubLink: "https://github.com",
-      background: "bg-gradient-to-br from-emerald-50 to-teal-100",
+      background: "bg-gradient-to-br from-sunset-50 to-orange-100",
     }
   ];
 
@@ -81,7 +81,10 @@ const ProjectsSection = () => {
                   
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map(tag => (
-                      <span key={tag} className="bg-white/60 text-sm px-2 py-1 rounded-full">
+                      <span 
+                        key={tag} 
+                        className="bg-white/80 text-sm px-2 py-1 rounded-full border border-sunset-200 transition-all duration-300 hover:border-sunset-300"
+                      >
                         {tag}
                       </span>
                     ))}
@@ -93,7 +96,7 @@ const ProjectsSection = () => {
                     href={project.liveLink} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-highlight hover:text-highlightDark font-medium text-sm inline-flex items-center"
+                    className="text-sunset-500 hover:text-sunset-600 font-medium text-sm inline-flex items-center transition-all duration-300"
                   >
                     Live Demo
                     <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -105,7 +108,7 @@ const ProjectsSection = () => {
                     href={project.githubLink} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-foreground hover:text-highlight font-medium text-sm inline-flex items-center"
+                    className="text-foreground hover:text-sunset-500 font-medium text-sm inline-flex items-center transition-all duration-300"
                   >
                     GitHub
                     <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
